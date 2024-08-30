@@ -3,7 +3,19 @@ import React, { useState } from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-const images = ['Story - Sina.jpg', '34.jpg', 'asli.jpg', 'Sina 34.jpg'];
+const images = [
+  'the-song/34.jpg',
+  'the-song/chera khastam.jpg',
+  'the-song/japa.jpg',
+  'the-song/kaktus.jpg',
+  'the-song/khone.jpg',
+  'the-song/kooch.jpg',
+  'the-song/manshour.jpg',
+  'the-song/moalagh.jpg',
+  'the-song/noor.jpg',
+  'the-song/yani koo.jpg',
+  'the-song/Sina-Sae-TEHRAN.webp',
+];
 
 function Music() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,8 +46,9 @@ function Music() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100vh',
+          height: '78vh',
           perspective: '3000px',
+          mt: -5,
         }}
       >
         <IconButton
@@ -93,15 +106,16 @@ function Music() {
                   transition: 'transform 0.5s ease',
                   zIndex,
                   borderRadius: '15px',
-                  height: '70%',
+                  height: '75%',
                   width: '40%',
                 }}
               >
                 <CardMedia
                   component="img"
-                  height="550"
+                  height="auto"
                   image={image}
                   alt={`image-${index}`}
+                  sx={{ width: '100%', objectFit: 'cover' }}
                 />
               </Card>
             );

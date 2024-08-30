@@ -7,7 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import SoundCloudIcon from './soundcloud';
 import SpotifyIcon from './spotyfy';
 
-function SocialMediaIcons() {
+function SocialMediaIcons({ size = 'default' }) {
   const iconStyles = {
     color: 'black',
     backgroundColor: '#f2b827',
@@ -18,27 +18,28 @@ function SocialMediaIcons() {
       backgroundColor: 'black',
     },
     margin: '0 10px',
+    fontSize: size === 'small' ? '1.2rem' : '1.5rem',
   };
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
       <IconButton sx={iconStyles}>
-        <FacebookIcon />
+        <FacebookIcon fontSize="inherit" />
       </IconButton>
       <IconButton sx={iconStyles}>
-        <TwitterIcon />
+        <TwitterIcon fontSize="inherit" />
       </IconButton>
       <IconButton sx={iconStyles}>
-        <InstagramIcon />
+        <InstagramIcon fontSize="inherit" />
       </IconButton>
       <IconButton sx={iconStyles}>
-        <YouTubeIcon />
+        <YouTubeIcon fontSize="inherit" />
       </IconButton>
       <IconButton sx={iconStyles}>
-        <SoundCloudIcon />
+        <SoundCloudIcon fontSize="inherit" />
       </IconButton>
       <IconButton sx={iconStyles}>
-        <SpotifyIcon />
+        <SpotifyIcon fontSize="inherit" />
       </IconButton>
     </Box>
   );
