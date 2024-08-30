@@ -32,10 +32,8 @@ function Header() {
     handleCloseNavMenu();
   };
 
-  const borderAnimation = `0.2s ease-in-out forwards`;
-
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#131313' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#111111' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box
@@ -101,6 +99,9 @@ function Header() {
                     fontWeight: '500',
                     fontSize: '18px',
                     mx: 1,
+                    '&:hover': {
+                      backgroundColor: 'transparent',
+                    },
                   }}
                 >
                   {page}
