@@ -12,7 +12,7 @@ function About() {
           width: '100%',
           display: 'flex',
           flexDirection: 'row-reverse',
-          pt: 5,
+          py: 5,
           gap: 5,
         }}
       >
