@@ -89,7 +89,14 @@ function Header() {
             }}
           >
             {pages.map((page) => (
-              <CoolLink key={page} href={`${page.toLowerCase()}`}>
+              <CoolLink
+                key={page}
+                href={
+                  page === 'Contact Us'
+                    ? 'contact-us'
+                    : `${page.toLowerCase().replace(/\s+/g, '-')}`
+                }
+              >
                 <Button
                   onClick={() => handleMenuItemClick(page)}
                   sx={{
