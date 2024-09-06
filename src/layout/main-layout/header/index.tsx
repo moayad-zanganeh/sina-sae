@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import CoolLink from '@/components/shared/cool-link';
+import { useRouter } from 'next/router';
 
 const pages = ['Home', 'About', 'Music', 'Contact us'];
 
@@ -17,7 +18,11 @@ function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [activePage, setActivePage] = React.useState('Home');
+  const router = useRouter();
+  const currentPath = router.pathname.split('/').pop() || 'home';
+  const [activePage, setActivePage] = React.useState<string>(
+    currentPath.charAt(0).toUpperCase() + currentPath.slice(1).replace('-', ' ')
+  );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -30,6 +35,7 @@ function Header() {
   const handleMenuItemClick = (page: string) => {
     setActivePage(page);
     handleCloseNavMenu();
+    router.push(page.toLowerCase().replace(/\s+/g, '-'));
   };
 
   return (
@@ -92,7 +98,7 @@ function Header() {
               <CoolLink
                 key={page}
                 href={
-                  page === 'Contact Us'
+                  page === 'Contact us'
                     ? 'contact-us'
                     : `${page.toLowerCase().replace(/\s+/g, '-')}`
                 }
