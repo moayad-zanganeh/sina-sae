@@ -18,7 +18,12 @@ function SocialMediaIcons({ size = 'default' }) {
       backgroundColor: 'black',
     },
     margin: '0 10px',
-    fontSize: size === 'small' ? '1.2rem' : '1.5rem',
+    fontSize: {
+      xs: '1.2rem',
+      sm: '1.2rem',
+      md: '1.3rem',
+      lg: '1.8rem',
+    },
   };
 
   return (

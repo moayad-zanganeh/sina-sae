@@ -33,7 +33,13 @@ function Music() {
   };
 
   return (
-    <>
+    <Box
+      sx={{
+        position: 'absolute',
+        bottom: { lg: 0, md: 0, sm: '2%', xs: '-1%' },
+        width: '100%',
+      }}
+    >
       <Box sx={{ textAlign: 'center', mt: 5 }}>
         <Typography variant="h4" sx={{ color: '#f3c242' }}>
           Music
@@ -46,9 +52,8 @@ function Music() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '78vh',
+          height: { md: '78vh', lg: '78vh', sm: '50vh', xs: '50vh' },
           perspective: '3000px',
-          mt: -5,
         }}
       >
         <IconButton
@@ -70,8 +75,8 @@ function Music() {
             justifyContent: 'center',
             alignItems: 'center',
             position: 'relative',
-            width: '80%',
-            height: '550px',
+            width: { lg: '73%', md: '80%', sm: '80%', xs: '100%' },
+            height: { lg: '550px', md: '550px', sm: '550px', xs: '710px' },
           }}
         >
           {images.map((image, index) => {
@@ -106,7 +111,7 @@ function Music() {
                   transition: 'transform 0.5s ease',
                   zIndex,
                   borderRadius: '15px',
-                  height: '75%',
+                  height: { lg: '78%', md: '59%', sm: '44%', xs: '24%' },
                   width: '40%',
                 }}
               >
@@ -135,7 +140,7 @@ function Music() {
           <ArrowBackIosIcon />
         </IconButton>
       </Box>
-    </>
+    </Box>
   );
 }
 

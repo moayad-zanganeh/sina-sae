@@ -11,7 +11,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import CoolLink from '@/components/shared/cool-link';
 import SocialMediaIcons from '@/components/shared/social-media';
-import { Divider } from '@mui/material';
 
 const pages = ['Home', 'About', 'Music', 'Contact us'];
 
@@ -47,7 +46,7 @@ function Footer() {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'none', md: 'flex' },
             }}
           >
             <IconButton
@@ -57,6 +56,9 @@ function Footer() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{
+                display: { lg: 'none', md: 'none', sx: 'none', xs: 'none' },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -74,7 +76,7 @@ function Footer() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { xs: 'none', md: 'none' } }}
             >
               {pages.map((page) => (
                 <MenuItem
@@ -125,9 +127,11 @@ function Footer() {
               </CoolLink>
             ))}
           </Box>
+
           <Box sx={{ mt: 2 }}>
             <SocialMediaIcons size="small" />
           </Box>
+
           <Box
             sx={{
               backgroundColor: '#f2b827',
@@ -136,6 +140,7 @@ function Footer() {
               width: '100%',
             }}
           />
+
           <Box sx={{ textAlign: 'center', mt: 2 }}>
             <Typography variant="body2" color="white">
               &copy; {new Date().getFullYear()} TikTaakSinaSae

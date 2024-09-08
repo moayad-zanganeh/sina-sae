@@ -13,17 +13,22 @@ function MainBar() {
           overflow: 'hidden',
         }}
       >
+        <About />
         <Box
           sx={{
             backgroundImage: "url('/Sina-Sae.jpg')",
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            position: 'fixed',
-            bottom: 0,
+            position: 'relative',
+            top: 0,
             left: 0,
             width: '100%',
-            height: '100%',
+            height: {
+              xs: '60vh',
+              sm: '70vh',
+              md: '90vh',
+            },
             zIndex: -2,
             opacity: 1,
           }}
@@ -39,7 +44,6 @@ function MainBar() {
             zIndex: -1,
           }}
         />
-        <About />
         <Music />
       </Box>
     </>
