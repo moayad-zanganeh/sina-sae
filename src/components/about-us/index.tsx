@@ -14,7 +14,7 @@ function About() {
         backgroundImage: "url('/34.jpg')",
         backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '40%',
+        backgroundSize: { lg: '40%', md: '40%', sm: '50%', xs: '100%' },
         backgroundPosition: 'center',
         position: 'relative',
         overflow: 'hidden',
@@ -34,12 +34,12 @@ function About() {
         <Typography
           sx={{
             color: '#f2b827',
-            fontSize: '25px',
+            fontSize: { lg: '25px', md: '20px', sm: '18px', xs: '18px' },
             textTransform: 'uppercase',
             textAlign: 'center',
             position: 'absolute',
-            right: '39%',
-            top: '-2%',
+            right: { lg: '40%', md: '38%', sm: '35%', xs: '25%' },
+            top: { md: '-2%', lg: '-2%', sm: '-1.2%', xs: '-1%' },
           }}
         >
           It All Starts From Here
@@ -50,7 +50,7 @@ function About() {
             width: '120%',
             height: '200px',
             transform: 'rotate(-5deg)',
-            mt: '25%',
+            mt: { lg: '25%', md: '29%', sm: '39%', xs: '75%' },
           }}
         ></Box>
         <Box

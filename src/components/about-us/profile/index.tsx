@@ -6,9 +6,14 @@ function Profile() {
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: {
+          lg: 'row',
+          md: 'row',
+          sm: 'row',
+          xs: 'column-reverse',
+        },
         alignItems: 'center',
-        maxWidth: '80%',
+        maxWidth: { lg: '80%', md: '80%', sm: '100%', xs: '100%' },
         margin: '0 auto',
         mt: 4,
         p: 5,
@@ -35,9 +40,10 @@ function Profile() {
       <Card
         sx={{
           flex: 1,
-          width: '80%',
+          width: { lg: '80%', md: '80%', sm: '80%', xs: '100%' },
           backgroundColor: '#131313',
           boxShadow: 'none',
+          mb: { lg: 0, md: 0, sm: 0, xs: 5 },
         }}
       >
         <CardMedia
@@ -45,7 +51,7 @@ function Profile() {
           image="Face-Sina.jpg"
           alt="description"
           sx={{
-            width: '80%',
+            width: { lg: '80%', md: '80%', sm: '80%', xs: '90%' },
             height: 'auto',
             mx: 'auto',
             borderRadius: '10px',

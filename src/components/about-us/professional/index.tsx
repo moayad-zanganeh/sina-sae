@@ -8,8 +8,8 @@ function Professional() {
         sx={{
           '--overlay-opacity': 0.5,
           backgroundImage: "url('/Sina 34.jpg')",
-          width: '300%',
-          height: '300px',
+          width: { lg: '300%', md: '300%', sm: '300%', xs: '300%' },
+          height: { lg: '300px', md: '240px', sm: '200px', xs: '130px' },
           backgroundPosition: '50% 34%',
           backgroundRepeat: 'no-repeat',
           backgroundSize: '35%',
@@ -33,12 +33,12 @@ function Professional() {
       <Typography
         sx={{
           color: '#f2b827',
-          fontSize: '25px',
+          fontSize: { lg: '25px', md: '20px', sm: '18px', xs: '15px' },
           textTransform: 'uppercase',
           textAlign: 'center',
           position: 'absolute',
-          right: '39%',
-          bottom: '28%',
+          right: { lg: '39%', md: '38%', sm: '35%', xs: '25%' },
+          bottom: { lg: '28%', md: '29%', sm: '31%', xs: '36%' },
         }}
       >
         Professional Experience
