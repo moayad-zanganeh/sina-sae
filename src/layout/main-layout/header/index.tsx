@@ -80,6 +80,7 @@ function Header() {
                   onClick={() => handleMenuItemClick(page)}
                   sx={{
                     color: activePage === page ? '#f2b827' : 'white',
+                    backgroundColor: '#111111',
                   }}
                 >
                   <Typography textAlign="center">{page}</Typography>
