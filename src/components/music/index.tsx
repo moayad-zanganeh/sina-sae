@@ -14,7 +14,7 @@ function Musics() {
       }}
     >
       <iframe
-        src="https://open.spotify.com/artist/5er043agmHdVZkWTxL0Lpk?si=gKBLT3nsQdGV4x6dkrH5Zg"
+        src="https://open.spotify.com/embed/artist/5er043agmHdVZkWTxL0Lpk"
         width="100%"
         height="580"
         allow="encrypted-media"

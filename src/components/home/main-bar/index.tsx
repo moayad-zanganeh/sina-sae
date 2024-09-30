@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import About from './about';
 import Social from './social';
 import Music from './music';
+import YouTubePlayer from './youtube';
 
 function MainBar() {
   return (
@@ -14,6 +15,7 @@ function MainBar() {
         }}
       >
         <About />
+        <YouTubePlayer />
         <Box
           sx={{
             backgroundImage: "url('/Sina-Sae.jpg')",
