@@ -5,7 +5,7 @@ import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ThemeContextProvider from '@/context/themContextProvider';
-import MusicPlayer from '@/components/shared/music-player';
+// import MusicPlayer from '@/components/shared/music-player';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={defaultTheme}>
           <CssBaseline />
-          <MusicPlayer />
+          {/* <MusicPlayer /> */}
           {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
       </QueryClientProvider>
