@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Box, Typography } from '@mui/material';
+import 'animate.css';
 
 const images = [
   {
@@ -23,8 +24,31 @@ const images = [
 ];
 
 function Execution() {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <Box
+      ref={containerRef}
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
@@ -36,6 +60,9 @@ function Execution() {
       {images.map((image, index) => (
         <Box
           key={index}
+          className={`${
+            isVisible ? 'animate__animated animate__slideInUp' : ''
+          }`}
           sx={{
             position: 'relative',
             width: '300px',
@@ -43,6 +70,7 @@ function Execution() {
             overflow: 'hidden',
             borderRadius: '8px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+            animationDelay: `${index * 0.3}s`,
             '&:hover .overlay': {
               opacity: 1,
             },

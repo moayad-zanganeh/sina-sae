@@ -27,7 +27,10 @@ function SocialMediaIcons({ size = 'default' }) {
   };
 
   return (
-    <Box display="flex" justifyContent="center" alignItems="center">
+    <Box
+      className="animate__animated animate__flipInX"
+      sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+    >
       <IconButton sx={iconStyles}>
         <FacebookIcon fontSize="inherit" />
       </IconButton>

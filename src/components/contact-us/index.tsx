@@ -51,6 +51,7 @@ const ContactUs = () => {
           }}
         >
           <Typography
+            className="animate__animated animate__fadeInUp"
             sx={{
               color: '#f2b827',
               fontSize: '35px',

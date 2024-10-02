@@ -3,7 +3,7 @@ import React from 'react';
 import Profile from './profile';
 import Professional from './professional';
 import Execution from './execution';
-
+import 'animate.css';
 function About() {
   return (
     <Box
@@ -11,11 +11,6 @@ function About() {
         '--overlay-opacity': 0.5,
         backgroundColor: '#111111',
         minHeight: '100vh',
-        backgroundImage: "url('/34.jpg')",
-        backgroundAttachment: 'fixed',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: { lg: '40%', md: '40%', sm: '50%', xs: '100%' },
-        backgroundPosition: 'center',
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -30,8 +25,24 @@ function About() {
         },
       }}
     >
+      <Box
+        className="animate__animated animate__zoomIn"
+        sx={{
+          backgroundImage: "url('/34.jpg')",
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: { lg: '40%', md: '40%', sm: '50%', xs: '100%' },
+          backgroundPosition: 'center',
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          top: '-36%',
+          zIndex: 0,
+        }}
+      ></Box>
       <Box sx={{ position: 'relative', zIndex: 2 }}>
         <Typography
+          className="animate__animated animate__fadeInUp"
           sx={{
             color: '#f2b827',
             fontSize: { lg: '25px', md: '20px', sm: '18px', xs: '18px' },
@@ -44,6 +55,7 @@ function About() {
         >
           It All Starts From Here
         </Typography>
+
         <Box
           sx={{
             backgroundColor: '#131313',
