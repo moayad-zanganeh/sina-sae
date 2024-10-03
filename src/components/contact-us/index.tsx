@@ -10,14 +10,19 @@ const ContactUs = () => {
     message: '',
   });
 
-  const handleChange = (e: any) => {
+  const [comments, setComments] = useState<any[]>([]); // State for storing user comments
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    setComments([...comments, formData]); // Add the new comment to the comments array
+    setFormData({ name: '', email: '', message: '' }); // Reset form data
   };
 
   return (
@@ -51,7 +56,6 @@ const ContactUs = () => {
           }}
         >
           <Typography
-            className="animate__animated animate__fadeInUp"
             sx={{
               color: '#f2b827',
               fontSize: '35px',
@@ -233,6 +237,23 @@ const ContactUs = () => {
             </Box>
           </form>
         </Box>
+      </Box>
+      <Box sx={{ p: 2, backgroundColor: '#f2b827', color: 'black' }}>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+          User Comments
+        </Typography>
+        {comments.length === 0 ? (
+          <Typography>No comments yet.</Typography>
+        ) : (
+          comments.map((comment, index) => (
+            <Box key={index} sx={{ mb: 2 }}>
+              <Typography sx={{ fontWeight: 'bold', color: '#111' }}>
+                {comment.name}
+              </Typography>
+              <Typography>{comment.message}</Typography>
+            </Box>
+          ))
+        )}
       </Box>
     </Box>
   );
