@@ -5,13 +5,13 @@ import 'animate.css';
 
 function Profile() {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 0.3, // Trigger when 30% of the component is in view
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
   return (
     <Box
-      ref={ref} // Attach ref to the Box
+      ref={ref}
       sx={{
         display: 'flex',
         flexDirection: {
@@ -28,13 +28,13 @@ function Profile() {
       }}
     >
       <Typography
-        className={inView ? 'animate__animated animate__slideInLeft' : ''} // Apply animation class if in view
+        className={inView ? 'animate__animated animate__slideInLeft' : ''}
         sx={{
           color: '#f2b827',
           lineHeight: '2',
           flex: 1,
           textAlign: 'justify',
-          opacity: inView ? 1 : 0, // Fade in effect
+          opacity: inView ? 1 : 0,
           transition: 'opacity 0.5s ease-in-out',
         }}
       >
@@ -50,14 +50,14 @@ function Profile() {
       </Typography>
 
       <Card
-        className={inView ? 'animate__animated animate__slideInRight' : ''} // Apply animation class if in view
+        className={inView ? 'animate__animated animate__slideInRight' : ''}
         sx={{
           flex: 1,
           width: { lg: '80%', md: '80%', sm: '80%', xs: '100%' },
           backgroundColor: '#131313',
           boxShadow: 'none',
           mb: { lg: 0, md: 0, sm: 0, xs: 5 },
-          opacity: inView ? 1 : 0, // Fade in effect
+          opacity: inView ? 1 : 0,
           transition: 'opacity 0.5s ease-in-out',
         }}
       >

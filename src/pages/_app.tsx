@@ -41,7 +41,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={defaultTheme}>
           <CssBaseline />
-          {/* <MusicPlayer /> */}
           {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
       </QueryClientProvider>

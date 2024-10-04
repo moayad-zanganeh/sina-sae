@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Box } from '@mui/material';
-import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
+import axios from 'axios';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +9,18 @@ const ContactUs = () => {
     message: '',
   });
 
-  const [comments, setComments] = useState<any[]>([]); // State for storing user comments
+  const [comments, setComments] = useState<any[]>([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/comments')
+      .then((response) => {
+        setComments(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching comments:', error);
+      });
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,8 +31,16 @@ const ContactUs = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setComments([...comments, formData]); // Add the new comment to the comments array
-    setFormData({ name: '', email: '', message: '' }); // Reset form data
+
+    axios
+      .post('http://localhost:5000/comments', formData)
+      .then((response) => {
+        setComments([...comments, response.data]);
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((error) => {
+        console.error('Error posting comment:', error);
+      });
   };
 
   return (
@@ -101,48 +119,36 @@ const ContactUs = () => {
             height: '45vh',
             ml: 5,
             p: 2,
+            maxHeight: '400px', // Limit height to enable scrolling
+            overflowY: 'auto', // Enable scrolling when content exceeds the height
+            '::-webkit-scrollbar': {
+              width: '10px',
+            },
+            '::-webkit-scrollbar-thumb': {
+              backgroundColor: 'black', // Custom scrollbar color
+              borderRadius: '5px',
+            },
+            '::-webkit-scrollbar-track': {
+              backgroundColor: '#f2b827', // Track background color
+            },
           }}
         >
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 'bold',
-              mb: 2,
-            }}
-          >
-            Communication with Sina Sae
-          </Typography>
-
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-            <PhoneIcon
-              sx={{
-                backgroundColor: 'black',
-                color: 'white',
-                borderRadius: '20px',
-                padding: '5px',
-                mr: 1,
-                fontSize: '30px',
-              }}
-            />
-            <Typography sx={{ fontWeight: 'bold', mr: 2, fontSize: '18px' }}>
-              +989123456789
+          <Box>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+              Comments
             </Typography>
-          </Box>
-
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <EmailIcon
-              sx={{
-                backgroundColor: 'black',
-                color: 'white',
-                borderRadius: '20px',
-                padding: '5px',
-                mr: 1,
-                fontSize: '30px',
-              }}
-            />
-            <Typography sx={{ fontWeight: 'bold', mr: 2, fontSize: '18px' }}>
-              tiktaaksaesina@gmail.com
-            </Typography>
+            {comments.length === 0 ? (
+              <Typography>No comments yet.</Typography>
+            ) : (
+              comments.map((comment, index) => (
+                <Box key={index} sx={{ mb: 2 }}>
+                  <Typography sx={{ fontWeight: 'bold', color: '#111' }}>
+                    {comment.name}
+                  </Typography>
+                  <Typography>{comment.message}</Typography>
+                </Box>
+              ))
+            )}
           </Box>
         </Box>
         <Box sx={{ mt: 4, width: '40%', mr: 4 }}>
@@ -237,23 +243,6 @@ const ContactUs = () => {
             </Box>
           </form>
         </Box>
-      </Box>
-      <Box sx={{ p: 2, backgroundColor: '#f2b827', color: 'black' }}>
-        <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
-          User Comments
-        </Typography>
-        {comments.length === 0 ? (
-          <Typography>No comments yet.</Typography>
-        ) : (
-          comments.map((comment, index) => (
-            <Box key={index} sx={{ mb: 2 }}>
-              <Typography sx={{ fontWeight: 'bold', color: '#111' }}>
-                {comment.name}
-              </Typography>
-              <Typography>{comment.message}</Typography>
-            </Box>
-          ))
-        )}
       </Box>
     </Box>
   );
