@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextField, Button, Typography, Box } from '@mui/material';
+import { TextField, Button, Typography, Box, Divider } from '@mui/material';
 import axios from 'axios';
 
 const ContactUs = () => {
@@ -48,7 +48,7 @@ const ContactUs = () => {
       <Box
         sx={{
           '--overlay-opacity': 0.5,
-          minHeight: '90vh',
+          minHeight: { xs: '70vh', sm: '90vh', md: '90vh', lg: '90vh' },
           backgroundImage: "url('/search.jpg')",
           backgroundRepeat: 'no-repeat',
           backgroundSize: '100%',
@@ -61,7 +61,7 @@ const ContactUs = () => {
             top: 0,
             left: 0,
             width: '100%',
-            height: '100%',
+            height: { xs: '80%', sm: '100%', md: '100%', lg: '100%' },
             backgroundColor: 'rgba(0, 0, 0, var(--overlay-opacity))',
             zIndex: 0,
           },
@@ -76,12 +76,22 @@ const ContactUs = () => {
           <Typography
             sx={{
               color: '#f2b827',
-              fontSize: '35px',
+              fontSize: {
+                xs: '16px',
+                sm: '30px',
+                md: '35px',
+                lg: '35px',
+              },
               textTransform: 'uppercase',
               textAlign: 'center',
               position: 'absolute',
               width: '100%',
-              bottom: 0,
+              bottom: {
+                xs: '216px',
+                sm: '112px',
+                md: '48px',
+                lg: '24px',
+              },
               left: 0,
             }}
           >
@@ -89,14 +99,33 @@ const ContactUs = () => {
           </Typography>
           <Box
             sx={{
-              backgroundColor: '#111',
-              width: '120%',
-              height: '200px',
+              backgroundColor: '#111111 !important',
+              width: {
+                xs: '103%',
+                sm: '110%',
+                md: '120%',
+              },
+              height: {
+                xs: '150px',
+                sm: '180px',
+                md: '200px',
+              },
               transform: 'rotate(-5deg)',
               position: 'absolute',
               top: 0,
               right: 0,
-              mt: '37%',
+              mt: {
+                xs: '51%',
+                sm: '51%',
+                md: '44%',
+                lg: '32.6%',
+              },
+              mr: {
+                xs: '1%',
+                sm: 0,
+                md: 0,
+                lg: 0,
+              },
             }}
           ></Box>
         </Box>
@@ -105,38 +134,58 @@ const ContactUs = () => {
         sx={{
           backgroundColor: '#111',
           display: 'flex',
-          flexDirection: 'row-reverse',
-          alignItems: 'center',
+          flexDirection: {
+            xs: 'column-reverse',
+            sm: 'row-reverse',
+          },
+          alignItems: {
+            xs: 'stretch',
+            sm: 'center',
+          },
           gap: 5,
           p: 2,
-          py: 10,
+          pt: 0,
+          pb: 10,
         }}
       >
         <Box
           sx={{
             backgroundColor: '#f2b827',
-            width: '50%',
-            height: '45vh',
-            ml: 5,
+            width: {
+              xs: '100%',
+              sm: '50%',
+            },
+            height: {
+              xs: 'auto',
+              sm: '45vh',
+            },
+            ml: {
+              xs: 0,
+              sm: 5,
+            },
             p: 2,
-            maxHeight: '400px', // Limit height to enable scrolling
-            overflowY: 'auto', // Enable scrolling when content exceeds the height
+            maxHeight: '400px',
+            overflowY: 'auto',
             '::-webkit-scrollbar': {
               width: '10px',
             },
             '::-webkit-scrollbar-thumb': {
-              backgroundColor: 'black', // Custom scrollbar color
+              backgroundColor: 'black',
               borderRadius: '5px',
             },
             '::-webkit-scrollbar-track': {
-              backgroundColor: '#f2b827', // Track background color
+              backgroundColor: '#f2b827',
             },
           }}
         >
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+            <Typography
+              variant="h6"
+              sx={{ fontSize: { xs: '16px' }, fontWeight: 800 }}
+            >
               Comments
             </Typography>
+            <Divider sx={{ background: 'black', my: 1 }} />
             {comments.length === 0 ? (
               <Typography>No comments yet.</Typography>
             ) : (
@@ -151,7 +200,23 @@ const ContactUs = () => {
             )}
           </Box>
         </Box>
-        <Box sx={{ mt: 4, width: '40%', mr: 4 }}>
+
+        <Box
+          sx={{
+            mt: {
+              xs: 2,
+              sm: 4,
+            },
+            width: {
+              xs: '100%',
+              sm: '40%',
+            },
+            mr: {
+              xs: 0,
+              sm: 4,
+            },
+          }}
+        >
           <form onSubmit={handleSubmit}>
             <Box sx={{ mb: 2, backgroundColor: 'white' }}>
               <TextField
@@ -161,18 +226,6 @@ const ContactUs = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    '&.Mui-focused fieldset': {
-                      borderColor: '#f2b827',
-                    },
-                  },
-                  '& .MuiInputLabel-root': {
-                    '&.Mui-focused': {
-                      color: '#f2b827',
-                    },
-                  },
-                }}
               />
             </Box>
             <Box sx={{ mb: 2, backgroundColor: 'white' }}>
@@ -184,18 +237,6 @@ const ContactUs = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    '&.Mui-focused fieldset': {
-                      borderColor: '#f2b827',
-                    },
-                  },
-                  '& .MuiInputLabel-root': {
-                    '&.Mui-focused': {
-                      color: '#f2b827',
-                    },
-                  },
-                }}
               />
             </Box>
             <Box sx={{ mb: 2, backgroundColor: 'white' }}>
@@ -208,21 +249,9 @@ const ContactUs = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    '&.Mui-focused fieldset': {
-                      borderColor: '#f2b827',
-                    },
-                  },
-                  '& .MuiInputLabel-root': {
-                    '&.Mui-focused': {
-                      color: '#f2b827',
-                    },
-                  },
-                }}
               />
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Box sx={{ fontSize: { xs: '12px' }, fontWeight: { xs: 800 } }}>
               <Button
                 type="submit"
                 variant="contained"
