@@ -87,12 +87,12 @@ const ContactUs = () => {
               position: 'absolute',
               width: '100%',
               bottom: {
-                xs: '0px',
+                xs: '-218px',
                 sm: '112px',
                 md: '48px',
-                lg: '24px',
+                lg: '52px',
+                xl: '60px',
               },
-              top: { xs: '168px', sm: '0px', md: '0px', lg: '0px' },
               left: 0,
             }}
           >
@@ -133,7 +133,7 @@ const ContactUs = () => {
       </Box>
       <Box
         sx={{
-          backgroundColor: '#111',
+          backgroundColor: '#111111',
           display: 'flex',
           flexDirection: {
             xs: 'column-reverse',
