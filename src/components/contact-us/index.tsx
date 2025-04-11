@@ -70,7 +70,7 @@ const ContactUs = () => {
         <Box
           sx={{
             position: 'relative',
-            height: '510px',
+            height: { xs: '0px', sm: '510px', md: '510px', lg: '510px' },
           }}
         >
           <Typography
@@ -87,11 +87,12 @@ const ContactUs = () => {
               position: 'absolute',
               width: '100%',
               bottom: {
-                xs: '216px',
+                xs: '0px',
                 sm: '112px',
                 md: '48px',
                 lg: '24px',
               },
+              top: { xs: '168px', sm: '0px', md: '0px', lg: '0px' },
               left: 0,
             }}
           >
