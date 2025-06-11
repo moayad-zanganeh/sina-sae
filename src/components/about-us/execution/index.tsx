@@ -123,7 +123,9 @@ function Execution() {
                 lineHeight: '2',
               }}
             >
-              {image.description}
+              {image.description
+                .replace(/"/g, '&quot;') 
+                .replace(/&/g, '&amp;')}
             </Typography>
           </Box>
         </Box>

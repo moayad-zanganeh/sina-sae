@@ -1,0 +1,27 @@
+import { Box } from '@mui/material';
+import React from 'react';
+
+function Spotify() {
+  return (
+    <Box
+      sx={{
+        height: '100vh',
+        backgroundColor: '#111111',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: 2,
+      }}
+    >
+      <iframe
+        src="https://open.spotify.com/embed/artist/5er043agmHdVZkWTxL0Lpk"
+        width="100%"
+        height="580"
+        allow="encrypted-media"
+        style={{ borderRadius: '8px' }}
+        title="Spotify Artist"
+      ></iframe>
+    </Box>
+  );
+}
+export default Spotify;
