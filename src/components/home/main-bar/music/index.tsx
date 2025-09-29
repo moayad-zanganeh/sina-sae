@@ -111,7 +111,7 @@ function Music() {
                   transition: 'transform 0.5s ease',
                   zIndex,
                   borderRadius: '15px',
-                  height: { lg: '70%', md: '59%', sm: '44%', xs: '24%' },
+                  height: { lg: '67%', md: '53%', sm: '35%', xs: '21%' },
                   width: '40%',
                 }}
               >
