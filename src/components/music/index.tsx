@@ -3,7 +3,7 @@ import { Box, Tabs, Tab } from '@mui/material';
 import Spotify from './spotify/Spotify';
 import SoundCloud from './soundCloud/SoundCloud';
 
-function TabPanel(props) {
+function TabPanel(props:any) {
   const { children, value, index, ...other } = props;
   return (
     <div
@@ -18,7 +18,7 @@ function TabPanel(props) {
   );
 }
 
-function a11yProps(index) {
+function a11yProps(index:any) {
   return {
     id: `music-tab-${index}`,
     'aria-controls': `music-tabpanel-${index}`,
@@ -27,7 +27,7 @@ function a11yProps(index) {
 
 function Musics() {
   const [value, setValue] = useState(0);
-  const handleChange = (event, newValue) => {
+  const handleChange = ({event, newValue}: any) => {
     setValue(newValue);
   };
 

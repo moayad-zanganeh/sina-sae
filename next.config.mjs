@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  output: 'export', 
-};
+// next.config.mjs
+const isProd = process.env.NODE_ENV === 'production';
 
-export default nextConfig;
+export default {
+  basePath: isProd ? '/sina-sae' : '',
+  assetPrefix: isProd ? '/sina-sae/' : '',
+  trailingSlash: true,
+  output: 'export',
+};

@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
   "dev": "next dev",
-  "build": "next build",
   "start": "next start",
   "lint": "next lint",
   "server": "json-server --watch db.json --port 5000",
-  "predeploy": "next build && next export",
+  "predeploy": "next build",
   "export": "next export",
+  "build": "next build",
   "deploy": "gh-pages -d out"
 },
   "dependencies": {

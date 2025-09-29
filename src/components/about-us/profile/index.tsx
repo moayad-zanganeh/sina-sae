@@ -42,8 +42,8 @@ function Profile() {
         city. He has been active in the Tik Tak group (RJZ) and is one of the
         founders along with Khoshayar (Kechi Beats), Sina Mafi, and himself.
         Sina Saei has ventured into acting alongside his music career, with
-        notable performances in theater productions such as "Hamlet Tehran" in
-        2017, "Plus Plus Power 2," and "Tehran Paris Tehran." Since losing his
+        notable performances in theater productions such as &quot;Hamlet Tehran&quot; in
+        2017, &quot;Plus Plus Power 2,&quot; and &quot;Tehran Paris Tehran.&quot; Since losing his
         father to a heart attack in 2015, Sina has been living with his mother.
         In 2018, Sina completed his military service and returned to his career
         with renewed vigor and determination.
