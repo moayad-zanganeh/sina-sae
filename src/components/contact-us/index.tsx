@@ -90,7 +90,7 @@ const ContactUs = () => {
                 xs: '-218px',
                 sm: '112px',
                 md: '48px',
-                lg: '52px',
+                lg: '68px',
                 xl: '60px',
               },
               left: 0,
