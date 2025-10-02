@@ -94,6 +94,7 @@ const ContactUs = () => {
                 xl: '60px',
               },
               left: 0,
+              zIndex:1
             }}
           >
             Get In Touch
